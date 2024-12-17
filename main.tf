@@ -12,7 +12,7 @@ resource "aws_vpc" "Bayer_practice" {
 }
 
 resource "aws_subnet" "subnet_Bayer_practice" {
-  vpc_id                  = aws_vpc.main.id
+  vpc_id                  = aws_vpc.Bayer_practice.id
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
   tags = {
@@ -21,7 +21,7 @@ resource "aws_subnet" "subnet_Bayer_practice" {
 }
 
 resource "aws_internet_gateway" "igw_bayer_practice" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.Bayer_practice.id
   tags = {
     Name = "main-igw"
   }
