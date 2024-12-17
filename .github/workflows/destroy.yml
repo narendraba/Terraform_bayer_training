@@ -28,10 +28,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCES_KEY }}
           aws-region: ap-south-1
 
-     # - name: 'Terraform Init'
-     #   run: |
-     #     terraform init
-     #   working-directory: ./terraform
+      - name: 'Terraform Init'
+        run: |
+          terraform init
+        working-directory: ./terraform
+
+      - name: 'Terraform plan'
+        run: |
+          terraform plan
+        working-directory: ./terraform
 
       - name: 'Terraform Destroy'
         run: |
