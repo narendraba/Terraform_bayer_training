@@ -38,11 +38,11 @@ resource "aws_instance" "example" {
 }
 
 #S3 creation
-resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
+resource "aws_s3_bucket" "state_bucket" {
+  bucket = "training-test6785" 
+  acl    = "private"
 
   tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
+    Name = "Terraform State Bucket"
   }
 }
