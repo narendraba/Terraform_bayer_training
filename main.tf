@@ -39,6 +39,10 @@ resource "aws_instance" "example" {
 
 #S3 creation
 resource "aws_s3_bucket" "example" {
-  bucket = "example-bucket-terraform"
-  acl    = "private"
+  bucket = "my-tf-test-bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 }
