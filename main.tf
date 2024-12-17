@@ -39,7 +39,7 @@ resource "aws_instance" "example" {
 
 #S3 creation
 resource "aws_s3_bucket" "state_bucket" {
-  bucket = "training-test6785" 
+  bucket = "Ballipali_Narendra" 
   acl    = "private"
 
   tags = {
