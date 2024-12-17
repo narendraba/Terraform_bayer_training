@@ -26,3 +26,19 @@ resource "aws_internet_gateway" "igw" {
     Name = "main-igw"
   }
 }
+
+# Ec2_instance 
+resource "aws_instance" "example" {
+  ami           = "ami-053b12d3152c0cc71"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ExampleInstance"
+  }
+}
+
+#S3 creation
+resource "aws_s3_bucket" "example" {
+  bucket = "example-bucket-terraform"
+  acl    = "private"
+}
